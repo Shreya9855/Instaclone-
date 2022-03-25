@@ -72,6 +72,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'Instagramclone.wsgi.application'
+LOGIN_REDIRECT_URL = 'home' #add custom
+LOGOUT_REDIRECT_URL = 'home' #add custom
 
 
 # Database
