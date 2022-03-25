@@ -1,8 +1,8 @@
-from dataclasses import field
 from django import forms
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from User.models import UserModel
 
-class SignUpForm(forms.ModelForm):
+class CustomUserCreationForm(UserCreationForm):
     display_name = forms.CharField(
         required = True,
         widget= forms.TextInput(
@@ -14,7 +14,6 @@ class SignUpForm(forms.ModelForm):
             }
         )
     )
-
     username = forms.CharField(
         required=True,
         widget= forms.TextInput(
@@ -27,7 +26,6 @@ class SignUpForm(forms.ModelForm):
             }
         )
     )
-
     email = forms.EmailField(
         required = True,
         widget = forms.EmailInput(
@@ -40,16 +38,13 @@ class SignUpForm(forms.ModelForm):
         )
     )
 
-    password = forms.CharField(
-        widget = forms.PasswordInput(
-            attrs = {
-                'class' : 'login_input',
-                'name' : 'password',
-                'type' : 'password',
-            }
-        )
-    )
-
     class Meta:
         model = UserModel
-        fields = ['display_name','username','email','password']
+        fields = ('display_name','username','email')
+
+class CustomUserChangeForm(UserChangeForm):
+    class Meta:
+        model = UserModel
+        fields = ('username','email')
+
+    

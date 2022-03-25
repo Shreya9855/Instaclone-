@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="login_input-container input-group-sm float-end border border-secondary me-3">
+    <div class='m-3'>
+    <form method="POST" action = "">
+        {% csrf_token %}
+        <div class="mb-3">
+          <label for="username" class="form-label">Username</label>
+          <input type="username" class="form-control" id="Inputusername" aria-describedby="usernameHelp" class='login_input' name='username'>
+        </div>
+        <div class="mb-3">
+          <label for="InputPassword" class="form-label">Password</label>
+          <input type="password" class="form-control" id="InputPassword1" class='login_input' name='password'>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+      <div>
+          <p class='mt-2'>Don't have an account. <span> <a href ='{% url 'signup' %}'>SignUp</a> </span> now</p>
+      </div>
+
+    </div>
+</div>
+{% endblock content %}
