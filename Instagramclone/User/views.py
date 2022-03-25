@@ -1,12 +1,15 @@
 from django.shortcuts import render
 
+from .form import SignUpForm
+
 # Create your views here.
 def signup(request):
-    return render(request,'signup.html')
+    form = SignUpForm()
+    return render(request,'signup.html',{"form": form})
 
 
 def login(request):
-    return render(request,'login.html')
+    return render(request,'login.html' )
 
 
 def profile(request):
