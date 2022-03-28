@@ -4,6 +4,7 @@ from django.urls import include, path
 
 urlpatterns = [
     path('',views.home,name='home'),
+    path('/profile/',views.profile,name = 'profile')
     # path('add/',views.addPost,name='addPost'),
     # path('edit/<int:pk>/',views.editPost,name='editPost'),
     # path('delete/<int:pk>/',views.deletePost,name='deletePost'),

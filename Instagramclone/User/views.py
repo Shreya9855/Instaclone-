@@ -25,6 +25,9 @@ class SignUpView(CreateView):
         return render(request,'signup.html',{"form": form})
 
 
+
+
+
 # def login(request):
 #     if request.method == "POST":
 #         username = request.POST['username']
@@ -46,5 +49,3 @@ class SignUpView(CreateView):
 
 
 
-def profile(request):
-    return render(request,'profile.html')
