@@ -5,8 +5,7 @@ from .models import UserModel,PostModel,CommentModel
 class newProfileForm(forms.ModelForm):
     class Meta:
         model = UserModel
-        fields = ('display_name','email','website','profile_pic','bio')
-
+        fields = ('email','website','profile_pic','bio')
 
 
 class NewPostForm(forms.ModelForm):

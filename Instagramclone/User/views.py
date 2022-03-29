@@ -12,12 +12,11 @@ class SignUpView(CreateView):
     success_url = reverse_lazy('login')
     template_name ='signup.html'
 
-    def signup(request):
-        print(request)
-        if request == 'POST':
-            print('halfdelayasfa')
-            form = CustomUserCreationForm(request.POST.get)
+    def signup(request):    
+        if request == 'POST':    
+            form = CustomUserCreationForm(request.POST.get)   
             if form.is_valid():
+                print(request.POST['id'])
                 form.save()
             return redirect('login')     
         else:
